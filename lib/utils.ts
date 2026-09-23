@@ -1,11 +1,11 @@
 export function formatDate(iso: string): string {
   if (!iso) return "";
-
   const d = new Date(iso + "T00:00:00");
   return d.toLocaleDateString("en-US", {
     weekday: "short",
     month: "short",
     day: "numeric",
+    timeZone: "UTC",
   });
 }
 
@@ -16,6 +16,7 @@ export function formatDateTime(iso: string): string {
     day: "numeric",
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "UTC",
   });
 }
 

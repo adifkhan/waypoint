@@ -44,6 +44,7 @@ const EmployeeDashboard = () => {
   const upcoming = myTrips.filter(
     (t) => t.status === "pending" || t.status === "approved",
   );
+
   const past = myTrips.filter((t) =>
     ["completed", "rejected", "cancelled"].includes(t.status),
   );

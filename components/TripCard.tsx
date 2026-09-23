@@ -1,6 +1,13 @@
 import { drivers, vehicles } from "@/lib/store";
 import { TripRequest } from "@/lib/types";
-import { ArrowRight, CalendarDays, Clock, RotateCw, Users } from "lucide-react";
+import {
+  ArrowRight,
+  CalendarDays,
+  Clock,
+  LineDotRightHorizontal,
+  RotateCw,
+  Users,
+} from "lucide-react";
 import React from "react";
 import StatusBadge from "./StatusBadge";
 import { formatDate, formatTime12 } from "@/lib/utils";
@@ -15,6 +22,17 @@ const TripCard = ({ trip, footer, meta }: TripCardPropsType) => {
   const vehicle = vehicles.find((v) => v.id === trip.vehicleId);
   const driver = drivers.find((d) => d.id === trip.driverId);
 
+  const trip_type =
+    trip.tripType === "round" ? (
+      <>
+        <RotateCw size={10} /> Round trip
+      </>
+    ) : (
+      <>
+        <LineDotRightHorizontal size={10} /> Single trip
+      </>
+    );
+
   return (
     <div className="rounded-xl border border-line bg-surface p-4">
       <div className="flex items-start justify-between gap-3">
@@ -22,13 +40,7 @@ const TripCard = ({ trip, footer, meta }: TripCardPropsType) => {
           <div className="flex items-center gap-2 text-[11px] font-mono text-text-faint">
             <span>{trip.id}</span>
             <span className="inline-flex items-center gap-1 text-info">
-              {trip.tripType === "round" ? (
-                <>
-                  <RotateCw size={10} /> Round trip
-                </>
-              ) : (
-                "Single trip"
-              )}
+              {trip_type}
             </span>
           </div>
           <p className="mt-1 flex items-center gap-1.5 text-sm font-semibold text-text">

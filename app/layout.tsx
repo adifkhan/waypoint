@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Waypoint - Fleet Dispatch Console",
   description: "Request, approve, and track company transport in one place.",
