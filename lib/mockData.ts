@@ -8,14 +8,14 @@ import {
 } from "./types";
 
 export const LOCATIONS: Location[] = [
-  { name: "Head Office (Gulshan)", x: 50, y: 46 },
+  { name: "Head Office (Gulshan)", x: 45, y: 56 },
   { name: "Sub-Office (Uttara)", x: 58, y: 12 },
   { name: "Sub-Office (Motijheel)", x: 68, y: 58 },
   { name: "Factory (Gazipur)", x: 30, y: 10 },
   { name: "Factory (Savar)", x: 10, y: 40 },
   { name: "Warehouse (Narayanganj)", x: 72, y: 82 },
   { name: "Client Site (Bashundhara)", x: 78, y: 30 },
-  { name: "Hazrat Shahjalal Airport", x: 55, y: 20 },
+  { name: "Hazrat Shahjalal Airport", x: 55, y: 25 },
 ];
 
 export const CUSTOM_LOCATION_VALUE = "__custom__";
